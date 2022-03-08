@@ -1,14 +1,14 @@
 import requests as r, json
 
-base_url = "https://api.openweathermap.org/data/2.5/weather?"
-api_key = "39a54b32b608837afb449c9d1bb49ae2"
+base_url = "https://api.openweathermap.org/data/2.5/weather?" #baseurl for the endpoint
+api_key = "39a54b32b608837afb449c9d1bb49ae2" #apikey to extract weather
 
-cityname = input("What city would you like to visit?\n")
-answer = input(f"Would you like details about {cityname}?\n")
+cityname = input("What city would you like to visit?\n") #saves the cityname
+answer = input(f"Would you like details about {cityname}?\n") #retrieves user's answer
 
-url = f"{base_url}q={cityname}&appid={api_key}"
-response = r.get(url) #accessing data
-data = response.json() #saving the weather details in a json file
+url = f"{base_url}q={cityname}&appid={api_key}" #forms the api based on the user's response
+response = r.get(url) #accessing data based on user's response
+data = response.json() #saving the weather info in a json file
 print()
 
 try:
@@ -51,6 +51,5 @@ try:
 
     else:
         print("Goodbye")
-
 except:
     print("Have you entered a valid city name?")
