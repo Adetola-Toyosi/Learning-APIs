@@ -8,4 +8,6 @@ api_key = "39a54b32b608837afb449c9d1bb49ae2"
 url = f"{endpoint}q={cityname}&appid={api_key}"
 response = r.get(url)
 
-print(response.text)
+#print(response.text)
+#print(url) #to see the url and open in a web browser
+print(response.json())
