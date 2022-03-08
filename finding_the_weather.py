@@ -30,4 +30,3 @@ latitude = coordinates['lat']
 weather = weather_data['weather']
 weather_without_list = weather[0]
 print(weather_without_list['description'])
-
