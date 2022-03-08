@@ -10,4 +10,7 @@ response = r.get(url)
 
 #print(response.text)
 #print(url) #to see the url and open in a web browser
-print(response.json())
+
+weather_data = response.json()
+with open('weather.json', 'w') as file:
+    json.dump(weather_data, file)
