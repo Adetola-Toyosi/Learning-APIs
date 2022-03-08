@@ -12,5 +12,22 @@ response = r.get(url)
 #print(url) #to see the url and open in a web browser
 
 weather_data = response.json()
+
 with open('weather.json', 'w') as file:
     json.dump(weather_data, file)
+
+#indexing
+main = weather_data['main']
+print(main['temp'])
+print(main['humidity'])
+
+print(weather_data['name'])
+
+coordinates = weather_data['coord']
+longitude = coordinates['lon']
+latitude = coordinates['lat']
+
+weather = weather_data['weather']
+weather_without_list = weather[0]
+print(weather_without_list['description'])
+
