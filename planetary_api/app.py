@@ -15,18 +15,22 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'pl
 # initializing the sqlite database
 db = SQLAlchemy(app)
 
+
+# to 'db_create create the database
 @app.cli.command('db_create')
 def db_create():
     db.create_all()
     print("Database created.")
 
 
+# 'db_drop' to delete the tables
 @app.cli.command('db_drop')
 def db_drop():
     db.drop_all()
     print("Database dropped.")
 
 
+# 'db_seed' to populate the records in the database
 @app.cli.command('db_seed')
 def db_seed():
     mecury = Planet(
